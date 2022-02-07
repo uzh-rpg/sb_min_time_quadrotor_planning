@@ -1,2 +1,3 @@
-# sb_min_time_quad_planning
-Code for the project Minimum-Time Quadrotor Waypoint Flight in Cluttered Environments
+## Minimum-Time Quadrotor Waypoint Flight in Cluttered Environments
+
+Source codes and datasets will be provided after publication.
