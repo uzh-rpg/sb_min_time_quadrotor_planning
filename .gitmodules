@@ -1,0 +1,9 @@
+[submodule "cnpy"]
+	path = cnpy
+	url = https://github.com/rogersce/cnpy.git
+[submodule "lib/cnpy"]
+	path = lib/cnpy
+	url = https://github.com/rogersce/cnpy.git
+[submodule "lib/flann"]
+	path = lib/flann
+	url = https://github.com/penickar/flann.git

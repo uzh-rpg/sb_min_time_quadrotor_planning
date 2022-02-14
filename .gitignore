@@ -1,0 +1,4 @@
+*.o
+*.obj.npy
+main
+path_dense.csv

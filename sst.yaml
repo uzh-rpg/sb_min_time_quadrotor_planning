@@ -1,0 +1,108 @@
+sampling_pos_min_max: [[-7.0 , 7.0],   #x
+                       [-7.0 , 7.0],      #y
+                       [-7.0 , 7.0]]  #z
+                          
+                          
+sampling_vel_min_max: [[-10.0 , 10.0],  #x
+                       [-10.0 , 10.0],      #y
+                       [-10.0 , 10.0]]  #z
+                    
+
+#distance = pos_scale* pos_distance + att_scale * quat_distance + vel_scale * vel_distance + omega_scale * rate_distance
+pos_scale: 1.0
+att_scale: 15.0
+vel_scale: 1.0
+omega_scale: 1.0      
+#maximal distance in quaternions is 2.0!!!!!
+
+logfile: results.log
+
+randomize_p_around: 2.0
+randomize_v_around: 5.0
+randomize_w_around: 5.0
+randomize_q_angle_around: 0.5
+scale_randomization_goal_bias: 0.5
+
+#1.0 value means the expansion of the tree is break if node.time + max_acc_time_to_gate  > primitive.time
+scale_tree_expansion_break_lowerbound: 1.5
+
+reaching_gate_time_ratio_to_pmm: 1.05
+
+# columns 0 specs begin
+check_collisions: true
+map: blender/random_columns.obj.npy
+map_type: ESDF
+min_clearance: 0.15
+start:
+  position: [0.0, -6.0, 1.3]
+  velocity: [0 , 0 , 0]
+end:
+  position: [0.0, 7.5 , 1.3]
+  velocity: [0 , 0 , 0]
+gates: []
+gates_orientations: [90, 90]    
+# columns 0 specs end
+
+# arena spec begin
+# check_collisions: true
+# map: blender/arena_track_obstacles_multistory.obj.npy
+# map_type: ESDF
+# min_clearance: 0.15
+# start:
+#   position: [-5.0,4.5,1.2]
+#   velocity: [0 , 0 , 0]
+# end:
+#   position: [-6.0 , 0.0 , 1.0]
+#   velocity: [0 , 0 , 0]
+# gates: [[ -0.66 , -1.36 , 3.9 ],
+#        [ 8.67 , 6.69 , 1.00 ],
+#        [ 9.2 , -3.6 , 1.00 ],
+#        [ -2.39 , -6.00 , 3.9 ],
+#        [ -2.39 , -6.23 , 1.00 ],
+#        [ 4.23 , -0.66 , 1.00 ],
+#        [ -2.66 , 6.66 , 1.00 ]]
+# gates_orientations: [0, 0,-20,-126,-180,0,72,-160,-90]    
+# arena spec end
+
+enforce_end_velocity: False
+equalize_openlist_sizes: False
+  
+pos_tolerance_diameter: 0.6 
+end_vel_distance_tolerance: 4.0
+
+  
+goal_bias: 0.05
+
+max_num_iterations: 2000000
+max_num_iterations_wo_impr: 2000000
+desired_num_reference_samples: 10000.0
+rotation_sample_mult_ratio: 50.0
+
+desired_dt: 0.004
+
+#reference commands randomization
+max_expand_time: 1.2
+ref_time_deviation: 0.4 #time deviation of 1.0*reference of rotation and max-acc
+ref_time_deviation_goal_bias: 0.05
+
+rand_rotate_rotation_vector_ang: 0.2
+rand_rotate_rotation_vector_ang_goal_bias: 0.05
+
+max_dist_from_reference: 3.0
+
+bias_start_from_previous_gate: 0.1 #how ofter to start from some of the nodes reaching 
+bias_use_reference_reach_gate_commands: 0.1 #how often to use the commands that reached the current gate
+
+#distance where to search for the best node around the random created
+dv: 1.30   
+#dv: 3.00   
+#distance considered for creation new witness
+#ds: 1.50
+ds: 0.50
+
+
+#topological PRM Parameters
+cutoof_distance_ratio_to_shortest: 1.05 #what is the ration of length compared to shortest, when paths are not considered
+ellipse_ratio_major_axis_focal_length: 1.25 # ratio between length of 2 major axis and focal length
+collision_distance_check: 0.02
+num_samples_between_gate: 300
