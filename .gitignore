@@ -1,4 +1,14 @@
 *.o
 *.obj.npy
+.vscode/
 main
+obj/
+env/
 path_dense.csv
+path.csv
+samples.csv
+samples_pmm.csv
+tree.csv
+open_list.csv
+roadmap_*.csv
+results.log
