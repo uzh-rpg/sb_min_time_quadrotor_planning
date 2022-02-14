@@ -3,6 +3,10 @@
 Code for paper: 
 R. Penicka, D. Scaramuzza, "Minimum-Time Quadrotor Waypoint Flight in Cluttered Environments", in Robotics and Automation Letters (RAL), 2022.
 
+Paper: [https://rpg.ifi.uzh.ch/docs/RAL22_Penicka.pdf](https://rpg.ifi.uzh.ch/docs/RAL22_Penicka.pdf)<br />
+Video: [https://youtu.be/TIvvHtzRwSo](https://youtu.be/TIvvHtzRwSo)
+
+[![illustration](./docs/RAL22_Penicka.jpg)](https://youtu.be/TIvvHtzRwSo)
 
 The code has been developed and tested on Ubuntu 20.04.
 
