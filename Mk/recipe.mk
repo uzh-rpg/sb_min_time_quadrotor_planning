@@ -35,7 +35,7 @@ create_directories:
 	echo "create dircetory $(OBJ_DIR)"
 	mkdir -p $(OBJ_DIR)
 
-dependencies: cnpy_lib flann_lib agilicious_lib
+dependencies: cnpy_lib flann_lib
 
 flann_lib:
 	echo "making flann"
@@ -45,12 +45,7 @@ cnpy_lib:
 	echo "making cnpy"
 	cd ./lib/cnpy; mkdir -p build; cd build; cmake .. -DCMAKE_INSTALL_PREFIX=../install ; make -j4; make install
 
-agilicious_lib:
-	echo "making agilicious"
-	cd ./lib/agilicious/agilib/build; cmake .. -DCMAKE_BUILD_TYPE=Release ; make -j8; #-DUNSAFE_MATH=OFF -DCMAKE_VERBOSE_MAKEFILE=ON
-	#cd ./lib/agilicious/agilib/build; cmake .. -DCMAKE_BUILD_TYPE=Debug; make;
-
-clean_dependencies: clean_flann_lib clean_agilicious_lib clean_cnpy_lib
+clean_dependencies: clean_flann_lib clean_cnpy_lib
 
 clean_cnpy_lib:
 	echo "cleaning cnpy"
@@ -59,10 +54,6 @@ clean_cnpy_lib:
 clean_flann_lib:
 	echo "cleaning flann"
 	cd ./lib/flann; rm -rf build; rm -rf install
-
-clean_agilicious_lib:
-	echo "cleaning flann"
-	rm -rf ./lib/agilicious/agilib/build/*
 
 clean:
 	$(RM) $(TARGET)

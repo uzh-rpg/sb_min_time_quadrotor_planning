@@ -3,6 +3,9 @@
 Code for paper: 
 R. Penicka, D. Scaramuzza, "Minimum-Time Quadrotor Waypoint Flight in Cluttered Environments", in Robotics and Automation Letters (RAL), 2022.
 
+
+The code has been developed and tested on Ubuntu 20.04.
+
 ### Downloading the code
 Clone the code repository and update the submodules.<br />
 `git clone https://github.com/uzh-rpg/sb_min_time_quadrotor_planning.git`<br />
@@ -12,7 +15,7 @@ Clone the code repository and update the submodules.<br />
 ### Compilation and dependencies
 
 Install following dependencies:<br />
-`sudo apt-get install libyaml-cpp-dev `<br />
+`sudo apt-get install build-essential cmake pkg-config ccache zlib1g-dev libomp-dev libyaml-cpp-dev libhdf5-dev libgtest-dev liblz4-dev liblog4cxx-dev libeigen3-dev python3 python3-venv python3-dev python3-wheel python3-opengl`<br />
 
 Compile first the dependencies present in submodules using<br />
 `make dependencies`<br />
@@ -26,7 +29,9 @@ To create the ESDF maps from the mesh .obj fles use the map.py script in the pyt
 Start the environment and activate it using:<br />
 `python3 -m venv env`<br />
 `source env/bin/activate`<br />
-Afterwards install the python dependencies using pip:<br />
+Afterwards install the python dependencies using pip (or pip3 if python3 is not default):<br />
+`pip install wheel`<br />
+`pip install pyopengl==3.1.0`<br />
 `pip install numpy trimesh matplotlib mesh_to_sdf python-csv`
 
 When the dependencies are installed run the following commands in the python folder to create the ESDF maps.
