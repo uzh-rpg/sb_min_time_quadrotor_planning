@@ -1,16 +1,36 @@
-## Minimum-Time Quadrotor Waypoint Flight in Cluttered Environments
+# Minimum-Time Quadrotor Waypoint Flight in Cluttered Environments
 
-Code for paper: 
-R. Penicka, D. Scaramuzza, "Minimum-Time Quadrotor Waypoint Flight in Cluttered Environments", in Robotics and Automation Letters (RAL), 2022.
-
-Paper: [https://rpg.ifi.uzh.ch/docs/RAL22_Penicka.pdf](https://rpg.ifi.uzh.ch/docs/RAL22_Penicka.pdf)<br />
-Video: [https://youtu.be/TIvvHtzRwSo](https://youtu.be/TIvvHtzRwSo)
+This repository contains the code for the Minimum-Time Quadrotor Waypoint Flight in Cluttered Environments presented in our paper: [Penicka and Scaramuzza RA-L'22](https://rpg.ifi.uzh.ch/docs/RAL22_Penicka.pdf).
 
 [![illustration](./docs/RAL22_Penicka.jpg)](https://youtu.be/TIvvHtzRwSo)
+
+
+
+## Citing
+If you use this code in an academic context, please cite the following publication:
+
+R. Penicka, D. Scaramuzza, **Minimum-Time Quadrotor Waypoint Flight in Cluttered Environments**, IEEE Robotics and Automation Letters, 2022. ([PDF](https://rpg.ifi.uzh.ch/docs/RAL22_Penicka.pdf))
+
+```
+@article{penicka22RALmintimeplanning,
+  author={Penicka, Robert and Scaramuzza, Davide},
+  journal={IEEE Robotics and Automation Letters}, 
+  title={Minimum-Time Quadrotor Waypoint Flight in Cluttered Environments}, 
+  year={2022}
+}
+```
+
+## License 
+GPL-3.0 License. Copyright (C) 2022 R. Penicka, D. Scaramuzza (Robotics and Perception Group, University of Zurich).
+
+This is a research code, expect that it changes often and any fitness for a particular purpose is disclaimed.
+
+## Installation and usage
 
 The code has been developed and tested on Ubuntu 20.04.
 
 ### Downloading the code
+
 Clone the code repository and update the submodules.<br />
 `git clone https://github.com/uzh-rpg/sb_min_time_quadrotor_planning.git`<br />
 `cd sb_min_time_quadrotor_planning`<br />
